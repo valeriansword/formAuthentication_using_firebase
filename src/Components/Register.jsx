@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import {Link } from "react-router-dom"
 import {auth,db} from "../Config/firebase";
 import {setDoc,doc} from "firebase/firestore";
+import { toast } from 'react-toastify';
 function Register() {
     const [name,setName]=useState("")
     const [email,setEmail]=useState("")
@@ -21,9 +22,10 @@ function Register() {
                 })
             }
             console.log("user registered succesfully");
-
+            toast.success("User registered succesfully",{position:"top-center"});
         }catch (err){
             console.log(err.message);
+            toast.error(err.message,{position:"bottom-center"});
 
 
         }

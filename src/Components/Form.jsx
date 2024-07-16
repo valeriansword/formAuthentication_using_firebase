@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 import "./Form.css";
 import {auth} from "../Config/firebase";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
-import {Link } from "react-router-dom"
+import {Link } from "react-router-dom";
+import {toast} from "react-toastify";
 function Form() {
     const [email,setEmail]=useState("")
     const [password,setPassword]=useState("");
@@ -11,10 +12,13 @@ function Form() {
        try{
         await signInWithEmailAndPassword(auth,email,password);
         console.log("user Loggin successfully");
+        toast.success("User logged in succesfully",{position:"top-center"});
         window.location.href="/formAuthentication_using_firebase/profile";
+        
        } 
        catch (err){
         console.log(err)
+        toast.error(err.message,{position:"bottom-center"});
        }
        
     }
@@ -35,7 +39,7 @@ function Form() {
         
         </div>
         <button  onClick={signIn}className='btn btn-primary w-100'>Login</button>
-        <p>don't have an account?<Link to="/">Signup</Link></p>
+        <p>don't have an account?<Link to="/formAuthentication_using_firebase/">Signup</Link></p>
 
       </div>
        

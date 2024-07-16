@@ -21,7 +21,7 @@ function Profile() {
     },[]);
     const logOut=async ()=>{
         try{await auth.signOut();
-        window.location.href="/formAuthentication_using_firebase"
+        window.location.href="/formAuthentication_using_firebase/"
         console.log("user loggout");
     }catch(err){
         console.log(err)
