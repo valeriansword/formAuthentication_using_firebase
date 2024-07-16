@@ -4,6 +4,7 @@ import {Link } from "react-router-dom"
 import {auth,db} from "../Config/firebase";
 import {setDoc,doc} from "firebase/firestore";
 import { toast } from 'react-toastify';
+import SignInUsingPopup from './SignInUsingPopup';
 function Register() {
     const [name,setName]=useState("")
     const [email,setEmail]=useState("")
@@ -18,7 +19,8 @@ function Register() {
             if(user){
                 await setDoc(doc(db,"Users",user.uid),{
                     name:name,
-                    email:user.email
+                    email:user.email,
+                    photo:""
                 })
             }
             console.log("user registered succesfully");
@@ -54,9 +56,9 @@ function Register() {
             <label for="formPassword" placeholderPassword>password</label>
         
         </div>
-        <button onClick={handleSubmit} className='btn btn-primary w-100'>Sign up</button>
+        <button onClick={handleSubmit} className='btn btn-primary w-100 rounded-0'>Sign up</button>
         <p>already have an account?<Link to="/formAuthentication_using_firebase/login">Login</Link></p>
-
+          <SignInUsingPopup />
       </div>
        
      

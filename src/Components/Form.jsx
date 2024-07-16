@@ -38,7 +38,7 @@ function Form() {
             <label for="floatingPassword" placeholderPassword>password</label>
         
         </div>
-        <button  onClick={signIn}className='btn btn-primary w-100'>Login</button>
+        <button  onClick={signIn}className='btn btn-primary w-100 rounded-0'>Login</button>
         <p>don't have an account?<Link to="/formAuthentication_using_firebase/">Signup</Link></p>
 
       </div>
