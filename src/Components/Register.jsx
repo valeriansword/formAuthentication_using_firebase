@@ -53,7 +53,7 @@ function Register() {
         
         </div>
         <button onClick={handleSubmit} className='btn btn-primary w-100'>Sign up</button>
-        <p>already have an account?<Link to="/login">Login</Link></p>
+        <p>already have an account?<Link to="/formAuthentication_using_firebase/login">Login</Link></p>
 
       </div>
        

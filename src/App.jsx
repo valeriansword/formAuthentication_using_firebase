@@ -17,9 +17,9 @@ function App() {
   return<>
   <BrowserRouter>
   <Routes>
-    <Route path="/" element={user?<Navigate to="/profile" />:<Register />}></Route>
-    <Route path="/login" element={<Form />}></Route>
-    <Route path="/profile" element={<Profile />} ></Route>
+    <Route path="/formAuthentication_using_firebase" element={user?<Navigate to="/formAuthentication_using_firebase/profile" />:<Register />}></Route>
+    <Route path="/formAuthentication_using_firebase/login" element={<Form />}></Route>
+    <Route path="/formAuthentication_using_firebase/profile" element={<Profile />} ></Route>
   </Routes>
   </BrowserRouter>
     

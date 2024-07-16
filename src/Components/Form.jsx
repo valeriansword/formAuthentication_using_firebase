@@ -11,7 +11,7 @@ function Form() {
        try{
         await signInWithEmailAndPassword(auth,email,password);
         console.log("user Loggin successfully");
-        window.location.href="/profile";
+        window.location.href="/formAuthentication_using_firebase/profile";
        } 
        catch (err){
         console.log(err)
